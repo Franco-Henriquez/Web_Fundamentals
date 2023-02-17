@@ -1,8 +1,13 @@
 **Caution** Make sure you backup your repositories! I am not responsible for you overwriting your own index.html and css files!
 
+Requirements:
+have pages already set up (instructions here https://pages.github.com/)
+code editor like notepad
+
+
 So the api and code idea I want to give credit to https://stackoverflow.com/questions/39048654/how-to-enable-directory-indexing-on-github-pages
 This script will index your empty folders so that they become accesible as if they were File Explorer or FTP.
-First you want to clone a copy and then edit the following line in the html file:
+First you want to clone a copy of this repository and then edit the following line in the html file:
 
 var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
 
@@ -14,6 +19,8 @@ Github Page: java-hearts.github.io
 You will change the code as follow:
 
 var myRepos = 'https://api.github.com/repos/Java-Hearts/java-hearts.github.io/contents/'
+
+Now, go ahead and use your own information!
 
 Save your changes and place this html AND the CSS in all empty folders within your repositories.
 And voila, the script will run on page load. :)))
