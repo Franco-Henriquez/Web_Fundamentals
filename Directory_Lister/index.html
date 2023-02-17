@@ -21,7 +21,7 @@
           const response = await fetch(myRepos);
           const data = await response.json();
           
-          let htmlString = '<h1>Directory Listing for folder: ' + directoryName +'</h1>';
+          let htmlString = '<h1>Directory Listing: <span id="directory-name">' + directoryName +'</span></h1>';
           htmlString += '<ul>';
           
           for (let file of data) {
