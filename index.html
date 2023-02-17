@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Franco's Git Page</h1>
-    <p>coming soon...</p> 
+    <p>coming soon...</p>
+    {% assign doclist = site.pages | sort: 'url'  %}
+    <ul>
+       {% for doc in doclist %}
+            {% if doc.name contains '.md' or doc.name contains '.html' %}
+                <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </body>
 </html>
