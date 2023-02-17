@@ -7,7 +7,6 @@
     <title>Franco's Git Page</title>
 </head>
 <body>
-<html>
 <p>testing..</p>
     <script>
       (async () => {
@@ -24,7 +23,7 @@
         
         for (let file of data) {
           if (file.name != 'index.html') {
-          htmlString += `<li><a href="${path}${file.name}/">${file.name}</a></li>`;
+          htmlString += `<li><a href="${path}/${file.name}/">${file.name}</a></li>`;
           }
         }
 
