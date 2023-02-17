@@ -15,8 +15,9 @@
           var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
+          var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
-          var myRepos = myRepos + directoryName 
+          var myRepos = myRepos + domainLessPath;
           const response = await fetch(myRepos);
           const data = await response.json();
           
