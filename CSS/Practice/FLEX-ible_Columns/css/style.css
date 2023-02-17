@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row {
+    display: flex;
+    margin: 1% auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row > * {
+    background: rgb(0, 255, 55);
+    padding: 5px;
+}
+
+.col {
+    flex: 1;
+}
+
+.col-2 {
+    flex: 2;
+}
+.col-3 {
+    flex: 3;
+}

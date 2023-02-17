@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("../font/Roboto-Light.ttf");
+    font-weight:200;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../font/Roboto-Bold.ttf");
+    font-weight:300;
+}
+* {
+    padding:0;
+    margin:0;
+    font-family: 'Roboto';
+    font-weight: 200;
+}
+  /* Fixed width container class that will "auto-center" itself */
+body {
+margin: 0 auto;
+padding: 0 14% 0;
+}
+
+/* navigation */
+#nav {
+    background: #000;
+    padding: 1% 2%;
+}
+
+#nav h1 {
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+/* My profile */
+#my-feed{
+    display: flex;
+    gap: 2%;
+}
+
+.my-profile-container {
+    flex: 2;
+}
+
+.my-profile {
+    display: flex;
+    align-items: center; /*this only affects the img child*/
+    /* justify-content: space-between;  this somehow does nothing? or just no noticable*/
+    flex-flow: column wrap;
+    border: 2px solid #000;
+    padding: 4%;
+    align-content: center;
+    
+}
+.my-profile img {
+    flex: 1;
+    width: 80px;
+    max-width: 100%;
+    height: auto;
+    
+}
+.my-profile a {
+    flex: 1 0 auto; 
+    padding: 20% 1% 2% 1%;
+    text-align: center; /*using this because align-items: center; from the parent is innefective when scaling screen down*/
+}
+.my-profile h3 {
+    flex: 2;
+    text-align: center; /*using this because align-items: center; from the parent is innefective when scaling screen down*/
+}
+
+
+
+
+
+.users {
+    flex: 8; /*less likely for text from .profile to be wrapped*/
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2%;
+}
+
+
+
+/*User Feeds*/
+.user-1,.user-2,.user-3 {
+    display: flex;
+    flex-flow: column wrap;
+    border: 2px solid #000;
+    padding: 6%;
+    justify-content: space-between;
+}
+
+
+
+.row-1 {
+    flex:1;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row-1 h3 {
+    flex: 5;
+}
+.row-1 p {
+    flex: 2;
+}
+.row-1 button {
+    flex: 1;
+}
+.row-2{
+    flex:2;
+}
+.like-btn {
+    background: rgba(255, 217, 0, 0.808);
+    vertical-align: center;
+    border-radius: 0px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0px 1px #000;
+    padding: 2px;
+}

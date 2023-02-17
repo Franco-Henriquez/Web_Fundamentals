@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 2% 2%;
+    margin: 0;
+    background-color:rgb(240, 240, 240);
+    
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0 0 2% 0;
+    color:rgb(84, 84, 84);
+    font-size-adjust: ;
+}
+
+.row1, .row2, .row3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2% 0;
+    margin: 2% 0;
+}
+
+.row1 {
+    background: rgb(27, 224, 116);
+}
+.row2 {
+    background: rgb(163, 73, 204);
+}
+.row3 {
+    background: rgb(255, 255, 255);
+}
+
+img {
+width: 20%;
+
+}
+
+#footer p {
+    text-align: center;
+}

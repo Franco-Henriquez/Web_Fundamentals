@@ -1,0 +1,26 @@
+h1, h2, h3 {
+    font-family: sans-serif;
+    margin:1%;
+    padding:1%;
+}
+h1 {
+    color: white;
+    background: black;
+    font-weight:600;
+}
+h1 > span {
+    color: cyan;
+}
+h2 {
+    color:white;
+    background: rebeccapurple;
+    text-align: center;
+    font-style: Italic;
+    font-weight:300;
+}
+h3{
+    background: #7cc3f8;
+    text-align: right;
+    font-weight: 100;
+    text-decoration: underline; /*redundant since Contact Us is usually an anchor/link which is auto underlined*/
+}

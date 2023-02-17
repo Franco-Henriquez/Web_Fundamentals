@@ -1,0 +1,34 @@
+#container {
+    padding: 50px;
+}
+.bt1{
+    border-radius: 10px;
+    border: 1%;
+    border-color:rgb(31, 136, 101);
+    color:rgb(31, 136, 101);
+    width: 100px;
+    height:auto;
+}
+.bt2{
+    border-radius: 50%;
+    border: 0;
+    border-color:rgb(101, 228, 186);
+    background: rgb(101, 228, 186);
+    color: #fff;
+    width:25px;
+    height:25px;
+    padding:auto;
+}
+.bt3{
+    background: rgb(0, 132, 255);
+    color: #fff;
+    width: 150px;
+    height: 25px;
+    border: 2px solid;
+    border-color: #000;
+    box-shadow: 4px 5px 0px 0px #000;
+}
+
+div {
+    margin: 10px;
+}
