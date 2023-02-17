@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Terminal';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Terminal'), url('https://fonts.cdnfonts.com/s/83558/Terminal.woff') format('woff');
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li * {
+    text-decoration: none;
+    color: blue;
+    font-family: sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Terminal', sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 0 0 2% 0;
+}
+
+#file-directory {
+    padding: 2%;
+}
+
