@@ -7,31 +7,33 @@
     <title>Franco's Git Page</title>
 </head>
 <body>
-<p>testing..</p>
-    <script>
-      (async () => {
-        var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
-        var location = window.location.pathname;
-        var path = location.substring(0, location.lastIndexOf("/"));
-        var directoryName = path.substring(path.lastIndexOf("/")+1);
-        var myRepos = myRepos + directoryName
-        const response = await fetch(myRepos);
-        const data = await response.json();
-        
-        
-        let htmlString = '<ul>';
-        
-        for (let file of data) {
-          if (file.name != 'index.html') {
-          htmlString += `<li><a href="${path}/${file.name}/">${file.name}</a></li>`;
+    <div id="file-directory">
+      <h1>Directory Loading...</h1>
+      <script>
+        (async () => {
+          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
+          var location = window.location.pathname;
+          var path = location.substring(0, location.lastIndexOf("/"));
+          var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
+          var myRepos = myRepos + directoryName 
+          const response = await fetch(myRepos);
+          const data = await response.json();
+          
+          let htmlString = '<h1>Directory Listing</h1>';
+          htmlString += '<ul>';
+          
+          for (let file of data) {
+            if (file.name != 'index.html' && file.name != '.gitignore') {
+            htmlString += `<li><a href="${path}/${file.name}/">${file.name}</a></li>`;
+            }
           }
-        }
 
-        htmlString += '</ul>';
-        document.getElementsByTagName('body')[0].innerHTML = htmlString;
-      
-      })()
-    </script>
+          htmlString += '</ul>';
+          document.getElementsById('file-firectory')[0].innerHTML = htmlString;
+        
+        })()
+      </script>
+    </div>
 
 </body>
 </html>
