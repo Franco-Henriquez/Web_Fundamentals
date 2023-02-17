@@ -24,7 +24,7 @@
           htmlString += '<ul>';
           
           for (let file of data) {
-            if (file.name != 'index.html' && file.name != '.gitignore') {
+            if (file.name != 'index.html' && file.name != '.gitignore' && file.name != 'style.css') {
             htmlString += `<li>&#x1F4C2;<a href="${path}/${file.name}/">${file.name}</a></li>`;
             }
           }
