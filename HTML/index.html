@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco's Git Page</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="file-directory">
@@ -19,12 +20,12 @@
           const response = await fetch(myRepos);
           const data = await response.json();
           
-          let htmlString = '<h1>Directory Listing</h1>';
+          let htmlString = '<h1>Directory Listing for folder: ' + directoryName +'</h1>';
           htmlString += '<ul>';
           
           for (let file of data) {
             if (file.name != 'index.html' && file.name != '.gitignore') {
-            htmlString += `<li><a href="${path}/${file.name}/">${file.name}</a></li>`;
+            htmlString += `<li>&#x1F4C2;<a href="${path}/${file.name}/">${file.name}</a></li>`;
             }
           }
 
