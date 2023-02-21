@@ -53,3 +53,23 @@ img[alt="gear"], img[alt="map-pin"] {
     vertical-align: middle;
     padding: 0 1% 0 0;
 }
+
+
+/*very useful ul li flex for nav*/
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    margin: 0px 20px;
+    width: 125px;
+    max-width: 200px;
+    margin: auto;
+    text-align: center;
+    list-style: none;  
+}
+ul li a {
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+}
