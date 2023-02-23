@@ -83,7 +83,7 @@
           let htmlString = '<h1>Directory Listing: <span id="directory-name">' + directoryName +'</span></h1>';
           htmlString += '<ul>';
           
-          for (let file of data) {
+          for (var file of data) {
             if (file.name != 'index.html' && file.name != '.gitignore' && file.name.includes(".") != true )
             {
               htmlString += `<li>&#x1F4C2;<a href="${path}/${file.name}/">${file.name}</a></li>`;
