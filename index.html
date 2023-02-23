@@ -71,14 +71,16 @@
       <div class="loading-anim"></div>
       <script>
         (async () => {
-          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
+          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
           var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
           var myRepos = myRepos + domainLessPath;
           const response = await fetch(myRepos);
+          // console.log("this is the response " + response)
           const data = await response.json();
+          // console.log("this is the data " + data)
           
           let htmlString = '<h1>Directory Listing: <span id="directory-name">' + directoryName +'</span></h1>';
           htmlString += '<ul>';
