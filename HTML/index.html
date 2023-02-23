@@ -83,9 +83,9 @@
             console.log("Directory name: " + directoryName)
             var countOfDir = (path.match(/\//g) || []).length;
             console.log("Count of forwardslashes : " + countOfDir)
-            if (countOfDir >= 2 ) {
+            if (countOfDir >= 1 ) {
               //then it's a subdirectory
-              console.log("It's a subdirectory!")
+              console.log("It's a subdirectory! but maaaybe a repo")
               // var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
               // console.log("Directory Paths: " + directoryPaths)
               const pathFolder = [];
@@ -108,7 +108,7 @@
 
           }
           var myUserName = "Franco-Henriquez"
-          var myRepo = "franco-henriquez.github.io"
+          var myRepo = "Web_Fundamentals"
           var myGitHubApiURL = 'https://api.github.com/repos/'+myUserName+'/'+myRepo+'/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
