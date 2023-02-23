@@ -84,7 +84,7 @@
               //then it's a subdirectory
               console.log("It's a subdirectory!")
               var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
-              var myRepos = myRepos + directoryPaths;
+              var myRepos = myRepos + "/" + directoryName;
               // console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
