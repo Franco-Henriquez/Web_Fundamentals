@@ -75,6 +75,7 @@
             //we're counting how many forwardslasher there are, but for it to be read it needs to be escaped with a backslash
             //the g just means global so it searches the whole string/value of path
             //fetch correct listing
+            var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
             var countOfDir = (path.match(/\//g) || []).length;
             if (countOfDir >= 2 ) {
               //then it's a subdirectory
@@ -92,7 +93,7 @@
               // console.log("Repo: " + myRepos)
 
           }
-          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
+          // var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
           console.log("Path: " + path)
