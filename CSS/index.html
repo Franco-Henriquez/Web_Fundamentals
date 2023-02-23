@@ -71,7 +71,7 @@
       <div class="loading-anim"></div>
       <script>
         (async () => {
-          function checkIfRepo(myGitHubApiURL,path){
+          function checkIfRepo(myRepo,myGitHubApiURL,path){
             //we're counting how many forwardslasher there are, but for it to be read it needs to be escaped with a backslash
             //the g just means global so it searches the whole string/value of path
             //fetch correct listing
@@ -97,7 +97,12 @@
               var myGitHubApiURL = myGitHubApiURL + rebuiltPath;
               // console.log("Repo: " + myGitHubApiURL)
               return myGitHubApiURL;
-            } else if (countOfDir == 1 ) {
+            } else if (myRepo.includes(".") == true && countOfDir == 1) {
+              // checks to see if repo has any decimals. aka is a domain name
+              // handle this as subdirectory
+              var myGitHubApiURL = myGitHubApiURL + directoryName;
+              return myGitHubApiURL;
+            } else if (countOfDir == 1) {
               console.log("It's a Repo disguised as a subdirectory!");
               //do not make changes to GitHub URL
               var myGitHubApiURL = myGitHubApiURL;
@@ -111,7 +116,6 @@
               return myGitHubApiURL;
             }
               // console.log("Repo: " + myGitHubApiURL)
-
           }
           var myUserName = "Franco-Henriquez"
           var myRepo = "Web_Fundamentals"
@@ -122,7 +126,7 @@
           console.log("Path: " + path)
           console.log("Repo 1: " + myGitHubApiURL)
           // var myGitHubApiURL = myGitHubApiURL + domainLessPath; //remake this to check if its repostory or not
-          var myGitHubApiURL = checkIfRepo(myGitHubApiURL,path);
+          var myGitHubApiURL = checkIfRepo(myRepo,myGitHubApiURL,path);
           console.log("Repo 2: " + myGitHubApiURL)
           const response = await fetch(myGitHubApiURL);
           // console.log("this is the response " + response)
