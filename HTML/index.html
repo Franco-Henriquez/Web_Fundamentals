@@ -77,14 +77,14 @@
             //fetch correct listing
             var location = window.location.pathname;
             var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
-            var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
             var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
             console.log("Directory name: " + directoryName)
             var countOfDir = (path.match(/\//g) || []).length;
             if (countOfDir >= 2 ) {
               //then it's a subdirectory
               console.log("It's a subdirectory!")
-              var myRepos = myRepos + domainLessPath;
+              var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
+              var myRepos = myRepos + directoryPaths;
               // console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
