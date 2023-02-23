@@ -85,9 +85,15 @@
             if (countOfDir >= 2 ) {
               //then it's a subdirectory
               console.log("It's a subdirectory!")
-              var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
-              console.log("Directory Paths: " + directoryPaths)
-              var myRepos = myRepos + directoryPaths;
+              // var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
+              // console.log("Directory Paths: " + directoryPaths)
+              const pathFolder = [];
+              pathFolder.push(location.split( '/' )[2]);
+              pathFolder.push(location.split( '/' )[3]);
+              console.log("Path Array: " + pathFolder);
+              var rebuiltPath = pathFolder[0] + "/" + pathFolder[1] + "/";
+              console.log("Subdirectories only: " + pathFolder[0] + "/" + pathFolder[1] + "/");
+              var myRepos = myRepos + rebuiltPath;
               // console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
