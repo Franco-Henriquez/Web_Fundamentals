@@ -80,11 +80,13 @@
               //then it's a subdirectory
               console.log("It's a subdirectory!")
               var myRepos = myRepos + domainLessPath;
+              console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
               //then it's a repo
               console.log("It's a Repo!")
               var myRepos = myRepos;
+              console.log("Repo: " + myRepos)
               return myRepos;
             }
 
@@ -98,9 +100,9 @@
           console.log("Directory name: " + directoryName)
           console.log("Repo 1" + myRepos)
           // var myRepos = myRepos + domainLessPath; //remake this to check if its repostory or not
-          checkIfRepo(path); //remake this to check if its repostory or not
-          console.log("Repo 2" + myRepos)
-          const response = await fetch(myRepos);
+          const response = await fetch(checkIfRepo(path));
+          
+
           // console.log("this is the response " + response)
           const data = await response.json();
           // console.log("this is the data " + data)
