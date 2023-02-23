@@ -74,16 +74,17 @@
           function checkIfRepo(path){
             //we're counting how many forwardslasher there are, but for it to be read it needs to be escaped with a backslash
             //the g just means global so it searches the whole string/value of path
+            //fetch correct listing
             var countOfDir = (path.match(/\//g) || []).length;
             if (countOfDir >= 2 ) {
               //then it's a subdirectory
               console.log("It's a subdirectory!")
-              var myRepos = myRepos;
+              var myRepos = myRepos + domainLessPath;
               return myRepos;
             } else if (countOfDir == 1) {
               //then it's a repo
               console.log("It's a Repo!")
-              var myRepos = myRepos + domainLessPath;
+              var myRepos = myRepos;
               return myRepos;
             }
 
