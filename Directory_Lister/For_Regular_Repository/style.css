@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Terminal';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Terminal'), url('https://fonts.cdnfonts.com/s/83558/Terminal.woff') format('woff');
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li * {
+    text-decoration: none;
+    color: blue;
+    font-family: sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Terminal', sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 0 0 2% 0;
+}
+
+#file-directory {
+    padding: 2%;
+}
+
+#directory-name {
+    color: blue;
+}
+
+.loading-anim {
+    border: 16px solid #e8e8e8;
+    border-radius: 50%;
+    border-top: 16px solid #2578bF;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
