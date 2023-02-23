@@ -80,15 +80,16 @@
               //then it's a subdirectory
               console.log("It's a subdirectory!")
               var myRepos = myRepos + domainLessPath;
-              console.log("Repo: " + myRepos)
+              // console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
               //then it's a repo
               console.log("It's a Repo!")
               var myRepos = myRepos;
-              console.log("Repo: " + myRepos)
+              // console.log("Repo: " + myRepos)
               return myRepos;
             }
+              // console.log("Repo: " + myRepos)
 
           }
           var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
@@ -98,11 +99,11 @@
           var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
           console.log("Directory name: " + directoryName)
-          console.log("Repo 1" + myRepos)
+          console.log("Repo 1: " + myRepos)
           // var myRepos = myRepos + domainLessPath; //remake this to check if its repostory or not
-          const response = await fetch(checkIfRepo(path));
-          
-
+          var myRepos = checkIfRepo(path);
+          console.log("Repo 2: " + myRepos)
+          const response = await fetch(myRepos);
           // console.log("this is the response " + response)
           const data = await response.json();
           // console.log("this is the data " + data)
