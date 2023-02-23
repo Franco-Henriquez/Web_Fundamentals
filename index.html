@@ -74,16 +74,18 @@
           function checkIfRepo(path){
             if (path.includes(".") == true ) {
               //then it's a subdirectory
+              console.log("It's a subdirectory!")
               var myRepos = myRepos;
               return myRepos;
             } else if (path.includes(".") == false) {
               //then it's a repo
+              console.log("It's a Repo!")
               var myRepos = myRepos + domainLessPath;
               return myRepos;
             }
 
           }
-          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
+          var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
           console.log("Path: " + path)

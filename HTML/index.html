@@ -71,14 +71,35 @@
       <div class="loading-anim"></div>
       <script>
         (async () => {
+          function checkIfRepo(path){
+            if (path.includes(".") == true ) {
+              //then it's a subdirectory
+              console.log("It's a subdirectory!")
+              var myRepos = myRepos;
+              return myRepos;
+            } else if (path.includes(".") == false) {
+              //then it's a repo
+              console.log("It's a Repo!")
+              var myRepos = myRepos + domainLessPath;
+              return myRepos;
+            }
+
+          }
           var myRepos = 'https://api.github.com/repos/Franco-Henriquez/franco-henriquez.github.io/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
+          console.log("Path: " + path)
           var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
-          var myRepos = myRepos + domainLessPath;
+          console.log("Directory name: " + directoryName)
+          console.log("Repo 1" + myRepos)
+          // var myRepos = myRepos + domainLessPath; //remake this to check if its repostory or not
+          checkIfRepo(path); //remake this to check if its repostory or not
+          console.log("Repo 2" + myRepos)
           const response = await fetch(myRepos);
+          // console.log("this is the response " + response)
           const data = await response.json();
+          // console.log("this is the data " + data)
           
           let htmlString = '<h1>Directory Listing: <span id="directory-name">' + directoryName +'</span></h1>';
           htmlString += '<ul>';
