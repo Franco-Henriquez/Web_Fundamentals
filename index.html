@@ -76,7 +76,9 @@
           var path = location.substring(0, location.lastIndexOf("/"));
           var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
+          console.log("Repo 1" + myRepos)
           var myRepos = myRepos + domainLessPath;
+          console.log("Repo 2" + myRepos)
           const response = await fetch(myRepos);
           // console.log("this is the response " + response)
           const data = await response.json();
