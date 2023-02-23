@@ -74,8 +74,10 @@
           var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
           var location = window.location.pathname;
           var path = location.substring(0, location.lastIndexOf("/"));
+          console.log("Path: " + path)
           var domainLessPath = location.substring(0, location.lastIndexOf("/")+1);
           var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
+          console.log("Directory name: " + directoryName)
           console.log("Repo 1" + myRepos)
           var myRepos = myRepos + domainLessPath;
           console.log("Repo 2" + myRepos)
