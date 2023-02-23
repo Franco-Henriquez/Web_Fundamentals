@@ -76,6 +76,7 @@
             //the g just means global so it searches the whole string/value of path
             //fetch correct listing
             var location = window.location.pathname;
+            console.log("Directory location: " + location)
             var myRepos = 'https://api.github.com/repos/Franco-Henriquez/Web_Fundamentals/contents/'
             var directoryName = path.substring(path.lastIndexOf("/")+1); /*current working directory*/
             
@@ -86,7 +87,7 @@
               console.log("It's a subdirectory!")
               var directoryPaths = location.substring(1, location.lastIndexOf("/")+1);
               console.log("Directory Paths: " + directoryPaths)
-              var myRepos = myRepos + "/" + directoryPaths;
+              var myRepos = myRepos + directoryPaths;
               // console.log("Repo: " + myRepos)
               return myRepos;
             } else if (countOfDir == 1) {
