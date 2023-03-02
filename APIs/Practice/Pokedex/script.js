@@ -7,6 +7,7 @@
 
 var pokeSearch = document.getElementById('search-bar')
 var spritePic = document.getElementById('sprite-pic')
+var pokeStats = document.getElementById('stats-list');
 var log = console.log.bind(log)
 var pokemon
 var pokeStats
@@ -23,7 +24,6 @@ async function iChooseU(){
         pokeResults = await pokeResults.json()
         var pokemonName = capitalize(pokeResults.name);
         // log(pokeResults)
-        pokeStats = document.getElementById('stats-list');
         var pokeTypes = pokeTypesCheck(pokeResults);
         log(pokeResults.height)
         var pokeHeight = parseInt(pokeResults.height) * 0.1; //convert to kg
@@ -40,7 +40,8 @@ async function iChooseU(){
         pokeStats.innerHTML += `<li><b>Weight:</b>&nbsp;<div> ${pokeWeight}kg</div></li>`
         spritePic.src = pokeResults.sprites.front_shiny
     } else {
-        alert("Your must first type a pokémon name or pokédex number!");
+        pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Please type a pokémon name</div></li>`
+        pokeStats.innerHTML += `<li><div>or pokédex number first.</div></li>`;
     }
 
 }
