@@ -8,17 +8,26 @@
 var pokeSearch = document.getElementById('search-bar')
 var spritePic = document.getElementById('sprite-pic')
 var pokeStats = document.getElementById('stats-list');
+var pokedexNumLimit = 1008;
 var log = console.log.bind(log)
 var pokemon
 var pokeStats
 
 function getVal(){
     pokemon = pokeSearch.value.toLowerCase() //to lowercase because the api only accepts lower case pokemon names
-    log(pokemon)
+    if (pokemon > pokedexNumLimit) {
+        pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Pokédex number cannot</div></li>`
+        pokeStats.innerHTML += `<li><div>exceed ${pokedexNumLimit}.</div></li>`;
+        log(pokemon)
+        pokemon = "invalid pokemon";
+    } else {
+        //do nothing
+    }
 }
 
 async function iChooseU(){
-    if (pokeSearch.value) {
+    log("Function IchooseYou " + pokemon);
+    if (pokemon && pokemon != "invalid pokemon") {
         var pokeResults = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
         // log(pokeResults)
         pokeResults = await pokeResults.json()
@@ -38,12 +47,15 @@ async function iChooseU(){
         pokeStats.innerHTML += `<li><b>Type:</b>&nbsp;<div> ${pokeTypes}</div></li>`
         pokeStats.innerHTML += `<li><b>Height:</b>&nbsp;<div> ${pokeHeight}m</div></li>`
         pokeStats.innerHTML += `<li><b>Weight:</b>&nbsp;<div> ${pokeWeight}kg</div></li>`
-        spritePic.src = pokeResults.sprites.front_shiny
-    } else {
+        // spritePic.src = pokeResults.sprites.front_shiny
+        spritePic.src = pokeResults.sprites.front_default;
+    } else if (!pokemon) {
         pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Please type a pokémon name</div></li>`
         pokeStats.innerHTML += `<li><div>or pokédex number first.</div></li>`;
+    } else if (pokemon == "invalid pokemon") {
+        pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Pokédex number cannot</div></li>`
+        pokeStats.innerHTML += `<li><div>exceed ${pokedexNumLimit}.</div></li>`;
     }
-
 }
 
 function capitalize(s)
