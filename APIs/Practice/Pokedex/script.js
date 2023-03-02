@@ -24,12 +24,17 @@ async function iChooseU(){
     // log(pokeResults)
     pokeStats = document.getElementById('stats-list');
     var pokeTypes = pokeTypesCheck(pokeResults);
+    var pokeHeight = capitalize(pokeResults.height)
+    var pokeWeight = capitalize(pokeResults.weight)
     // log(pokeStats)
     // listPokeStats(pokeStats,pokeTypes,pokemonName);
     pokeStats.innerHTML = `<li><b>Name:</b>&nbsp;<div> ${pokemonName}</div></li>`
     // await sleep(3000);
     pokeStats.innerHTML += `<li><b>Type:</b>&nbsp;<div> ${pokeTypes}</div></li>`
+    pokeStats.innerHTML += `<li><b>Height:</b>&nbsp;<div> 0.${pokeHeight}m</div></li>`
+    pokeStats.innerHTML += `<li><b>Height:</b>&nbsp;<div> ${pokeWeight}.0kg</div></li>`
     spritePic.src = pokeResults.sprites.front_shiny
+
 }
 
 function capitalize(s)
