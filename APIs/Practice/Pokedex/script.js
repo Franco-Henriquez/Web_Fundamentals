@@ -25,7 +25,10 @@ async function iChooseU(){
     pokeStats = document.getElementById('stats-list');
     var pokeTypes = pokeTypesCheck(pokeResults);
     // log(pokeStats)
-    pokeStats.innerHTML = `<li>Name: ${pokemonName}</li> <br> <li>Type: ${pokeTypes}</li>`
+    // listPokeStats(pokeStats,pokeTypes,pokemonName);
+    pokeStats.innerHTML = `<li><b>Name:</b>&nbsp;<div> ${pokemonName}</div></li>`
+    // await sleep(3000);
+    pokeStats.innerHTML += `<li><b>Type:</b>&nbsp;<div> ${pokeTypes}</div></li>`
     spritePic.src = pokeResults.sprites.front_shiny
 }
 
@@ -41,4 +44,13 @@ function pokeTypesCheck(pokeData){
     }
     pokeTypes = pokeTypes.substring(0, pokeTypes.length-2); //remove the extra fowardslash and space at the end of iteration
     return(pokeTypes)
+}
+
+async function listPokeStats(pokeStats,pokeTypes,pokemonName){
+   
+
+}
+
+async function sleep(ms) {
+    return new Promise(val => setTimeout(val, ms));
 }
