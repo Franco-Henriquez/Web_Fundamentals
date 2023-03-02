@@ -33,7 +33,7 @@ async function iChooseU(){
         var pokeWeight = Math.round(pokeWeight * 10) / 10; //set to only 1 decimal place
         // log(pokeStats)
         // listPokeStats(pokeStats,pokeTypes,pokemonName);
-        pokeStats.innerHTML = `<li><b>Name:</b>&nbsp;<div>${pokemonName}&nbsp;#${pokeResults.id}</div></li>`
+        pokeStats.innerHTML = `<li><b>Name:</b>&nbsp;<div>${pokemonName}&nbsp;&#8470;&nbsp;${pokeResults.id}</div></li>`
         // await sleep(3000);
         pokeStats.innerHTML += `<li><b>Type:</b>&nbsp;<div> ${pokeTypes}</div></li>`
         pokeStats.innerHTML += `<li><b>Height:</b>&nbsp;<div> ${pokeHeight}m</div></li>`
