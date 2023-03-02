@@ -310,10 +310,15 @@
 
 	div#picture img
 	{
-		display: block;
+		/* display: block; */
 		margin: 0 auto;
 	}
-
+	img#sprite-pic {
+		display: block; 
+	}
+	img#sprite-pic-shiny {
+		display: none; 
+	}
 	div#topPicture
 	{
 		margin: 6px auto;
@@ -1102,6 +1107,8 @@
 		from, to { border-color: transparent }
 		50% { border-color: rgb(54, 55, 61); }
 	}
+
+
 
 }
 

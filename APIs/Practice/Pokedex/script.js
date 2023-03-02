@@ -7,6 +7,7 @@
 
 var pokeSearch = document.getElementById('search-bar')
 var spritePic = document.getElementById('sprite-pic')
+var spritePicShiny = document.getElementById('sprite-pic-shiny')
 var pokeStats = document.getElementById('stats-list');
 var pokedexNumLimit = 1008;
 var log = console.log.bind(log)
@@ -49,6 +50,7 @@ async function iChooseU(){
         pokeStats.innerHTML += `<li><b>Weight:</b>&nbsp;<div> ${pokeWeight}kg</div></li>`
         // spritePic.src = pokeResults.sprites.front_shiny
         spritePic.src = pokeResults.sprites.front_default;
+        spritePicShiny.src = pokeResults.sprites.front_shiny;
     } else if (!pokemon) {
         pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Please type a pokémon name</div></li>`
         pokeStats.innerHTML += `<li><div>or pokédex number first.</div></li>`;
@@ -56,7 +58,21 @@ async function iChooseU(){
         pokeStats.innerHTML = `<li class="error-notice"><b>ERROR</b>&nbsp;<div>Pokédex number cannot</div></li>`
         pokeStats.innerHTML += `<li><div>exceed ${pokedexNumLimit}.</div></li>`;
     }
+    return(pokeResults);
 }
+
+//don't know how to get json results without quering the api again so we'll make a display:none function instead
+function seeShinySprite(){
+    currentDisplay = spritePic.style.display;
+    if (currentDisplay == 'block') {
+        spritePic.style.display = "none";
+        spritePicShiny.style.display = "block";
+    } else {
+        spritePic.style.display = "block";
+        spritePicShiny.style.display = "none";
+    }
+}
+
 
 function capitalize(s)
 {
