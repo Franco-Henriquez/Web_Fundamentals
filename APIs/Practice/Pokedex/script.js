@@ -67,3 +67,10 @@ async function listPokeStats(pokeStats,pokeTypes,pokemonName){
 async function sleep(ms) {
     return new Promise(val => setTimeout(val, ms));
 }
+
+
+//TO DO
+//do a check for any null data and show an alert that the specified information is not available.
+//add a index limit for pokdex number and return an alert or change display to show alert
+//replace all alerts with in-screen/in-div text errors
+//make one button able to switch between regular and shiny sprite or 3D non-sprite.
